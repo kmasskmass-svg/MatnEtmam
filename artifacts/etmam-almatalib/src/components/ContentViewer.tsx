@@ -4,6 +4,7 @@ import { normalizeArabic, countWords, estimateReadingTime } from "@/utils/arabic
 import { Bookmark, BookmarkCheck, Copy, Check, Clock, FileText } from "lucide-react";
 import { useState, useMemo } from "react";
 import type { Book, Bab, Fasl } from "@/types";
+import AudioPlayer from "@/components/AudioPlayer";
 
 interface Props {
   book: Book;
@@ -143,6 +144,9 @@ export default function ContentViewer({ book, bab, fasl, searchQuery = "" }: Pro
           </button>
         </div>
       </div>
+
+      {/* Audio Player */}
+      <AudioPlayer lines={allContent} sectionTitle={sectionTitle} />
 
       {/* Section title */}
       <div style={{ textAlign: "center", marginBottom: 28, padding: "20px 16px", borderTop: "2px solid var(--accent-light)", borderBottom: "2px solid var(--accent-light)" }}>
